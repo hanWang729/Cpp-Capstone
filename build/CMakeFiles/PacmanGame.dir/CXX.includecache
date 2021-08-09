@@ -6,9 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/home/workspace/Cpp-Capstone/src/controller.cpp
+controller.h
+/home/workspace/Cpp-Capstone/src/controller.h
+iostream
+-
+SDL.h
+/home/workspace/Cpp-Capstone/src/SDL.h
+pacman.h
+/home/workspace/Cpp-Capstone/src/pacman.h
+
 /home/workspace/Cpp-Capstone/src/controller.h
 pacman.h
 /home/workspace/Cpp-Capstone/src/pacman.h
+
+/home/workspace/Cpp-Capstone/src/game.cpp
+game.h
+/home/workspace/Cpp-Capstone/src/game.h
+iostream
+-
+SDL.h
+/home/workspace/Cpp-Capstone/src/SDL.h
 
 /home/workspace/Cpp-Capstone/src/game.h
 random
@@ -26,11 +44,19 @@ pacman.h
 ghost.h
 /home/workspace/Cpp-Capstone/src/ghost.h
 
+/home/workspace/Cpp-Capstone/src/ghost.cpp
+ghost.h
+/home/workspace/Cpp-Capstone/src/ghost.h
+
 /home/workspace/Cpp-Capstone/src/ghost.h
 human.h
 /home/workspace/Cpp-Capstone/src/human.h
 random
 -
+
+/home/workspace/Cpp-Capstone/src/human.cpp
+human.h
+/home/workspace/Cpp-Capstone/src/human.h
 
 /home/workspace/Cpp-Capstone/src/human.h
 vector
@@ -48,9 +74,25 @@ game.h
 renderer.h
 /home/workspace/Cpp-Capstone/src/renderer.h
 
+/home/workspace/Cpp-Capstone/src/pacman.cpp
+pacman.h
+/home/workspace/Cpp-Capstone/src/pacman.h
+cmath
+-
+iostream
+-
+
 /home/workspace/Cpp-Capstone/src/pacman.h
 human.h
 /home/workspace/Cpp-Capstone/src/human.h
+
+/home/workspace/Cpp-Capstone/src/renderer.cpp
+renderer.h
+/home/workspace/Cpp-Capstone/src/renderer.h
+iostream
+-
+string
+-
 
 /home/workspace/Cpp-Capstone/src/renderer.h
 vector
