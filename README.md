@@ -47,13 +47,13 @@ You can choose the difficulty from easy, normal or difficult. Otherwise, you can
 
 After decide the difficulty, the game start, as:
 
-![image-20210809220725512](../../Users/13240/AppData/Roaming/Typora/typora-user-images/image-20210809220725512.png)
+![image-20210809220725512](../GameScreen.png)
 
 In the game screen, the blue square is the player, yellow squares are food pieces, red rectangular is the ghost.
 
 When the player touch the ghost, the game end: 
 
-![image-20210809220942392](../../Users/13240/AppData/Roaming/Typora/typora-user-images/image-20210809220942392.png)
+![image-20210809220942392](GameEnd.png)
 
 The player has eaten by a ghost, the it turns to red.
 
