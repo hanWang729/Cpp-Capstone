@@ -43,7 +43,7 @@ Renderer::~Renderer()
   SDL_Quit();
 }
 
-void Renderer::Render(Pacman const pacman, Ghost const ghosts, std::vector<SDL_Point> const &foods)
+void Renderer::Render(Pacman const pacman, std::vector<Ghost> const ghosts, std::vector<SDL_Point> const &foods, int ghostnum)
 {
   SDL_Rect block;
   block.w = screen_width / grid_width;
@@ -76,10 +76,13 @@ void Renderer::Render(Pacman const pacman, Ghost const ghosts, std::vector<SDL_P
   SDL_RenderFillRect(sdl_renderer, &block);
 
   // Render Ghosts
-  block.x = static_cast<int>(ghosts.head_x) * block.w;
-  block.y = static_cast<int>(ghosts.head_y) * block.w;
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-  SDL_RenderDrawRect(sdl_renderer, &block);
+  for (int i = 0; i < ghostnum; i++)
+  {
+    block.x = static_cast<int>(ghosts[i].head_x) * block.w;
+    block.y = static_cast<int>(ghosts[i].head_y) * block.w;
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawRect(sdl_renderer, &block);
+  }
 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);

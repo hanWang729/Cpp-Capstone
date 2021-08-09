@@ -18,7 +18,8 @@ class Game {
 
  private:
   Pacman pacman;
-  Ghost ghosts;
+  std::vector<Ghost> ghosts{};
+  int ghostnum{0};
   std::vector<SDL_Point> foods;
   int foodnum{3};
 
@@ -30,7 +31,7 @@ class Game {
   int score{0};
 
   void PlaceFood();
-  void PlaceGhost();
+  void PlaceGhost(std::size_t grid_width, std::size_t grid_height);
   void Update();
 };
 

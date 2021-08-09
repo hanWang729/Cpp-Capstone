@@ -6,13 +6,10 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
     : pacman(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
-      random_h(0, static_cast<int>(grid_height - 1)),
-      ghosts(grid_width, grid_height)
+      random_h(0, static_cast<int>(grid_height - 1))
 {
-  // Ghost g(grid_width,grid_height);
-  // ghosts.emplace_back(g);
   PlaceFood();
-  PlaceGhost();
+  PlaceGhost(grid_width, grid_height);
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -32,7 +29,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, pacman);
     Update();
-    renderer.Render(pacman, ghosts, foods);
+    renderer.Render(pacman, ghosts, foods, ghostnum);
 
     frame_end = SDL_GetTicks();
 
@@ -91,8 +88,9 @@ void Game::PlaceFood()
   }
 }
 
-void Game::PlaceGhost()
+void Game::PlaceGhost(std::size_t grid_width, std::size_t grid_height)
 {
+  Ghost g = Ghost(grid_width, grid_width);
   int x, y;
   while (true)
   {
@@ -100,8 +98,10 @@ void Game::PlaceGhost()
     y = random_h(engine);
     if (!pacman.HumanCell(x, y))
     {
-      ghosts.head_x = x;
-      ghosts.head_y = y;
+      g.head_x = x;
+      g.head_y = y;
+      ghosts.emplace_back(g);
+      ghostnum++;
       return;
     }
   }
@@ -113,16 +113,22 @@ void Game::Update()
     return;
 
   pacman.Update();
-  ghosts.Update();
+  for (int i = 0; i < ghostnum; i++)
+  {
+    ghosts[i].Update();
+  }
 
   int new_x = static_cast<int>(pacman.head_x);
   int new_y = static_cast<int>(pacman.head_y);
 
-  int new_ghost_x = static_cast<int>(ghosts.head_x);
-  int new_ghost_y = static_cast<int>(ghosts.head_y);
+  for (int i = 0; i < ghostnum; i++)
+  {
+    int new_ghost_x = static_cast<int>(ghosts[i].head_x);
+    int new_ghost_y = static_cast<int>(ghosts[i].head_y);
 
-  if (new_x == new_ghost_x && new_y == new_ghost_y)
-    pacman.alive = false;
+    if (new_x == new_ghost_x && new_y == new_ghost_y)
+      pacman.alive = false;
+  }
 
   // Check if there's food over here
   for (int i = 0; i < foods.size(); i++)
@@ -136,8 +142,9 @@ void Game::Update()
       if (foods.size() == 0)
       {
         PlaceFood();
+        PlaceGhost(ghosts[0].getGridWidth(),ghosts[0].getGridHeight());
         //increase speed.
-        pacman.speed += 0.02;
+        // pacman.speed += 0.02;
       }
     }
   }

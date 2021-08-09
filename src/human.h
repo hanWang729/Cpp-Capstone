@@ -4,11 +4,18 @@
 #include <vector>
 #include "SDL.h"
 
-class Human {
+class Human
+{
 public:
-    enum class Direction { kUp, kDown, kLeft, kRight };
+    enum class Direction
+    {
+        kUp,
+        kDown,
+        kLeft,
+        kRight
+    };
 
-    Human() {};
+    Human(){};
 
     Direction direction = Direction::kUp;
 
@@ -18,6 +25,9 @@ public:
     float speed{0.1f};
 
     bool HumanCell(int x, int y);
+
+    int getGridWidth() { return grid_width; };
+    int getGridHeight() { return grid_height; };
 
 protected:
     int grid_width;
