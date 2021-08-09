@@ -26,8 +26,8 @@ public:
 
     Direction direction = Direction::kUp;
 
-    float head_x;
-    float head_y;
+    float head_x{0};
+    float head_y{0};
 
     float speed{0.1f};
 
