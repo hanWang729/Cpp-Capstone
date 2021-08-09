@@ -6,6 +6,7 @@
 #include "controller.h"
 #include "renderer.h"
 #include "pacman.h"
+#include "ghost.h"
 
 class Game {
  public:
@@ -16,6 +17,7 @@ class Game {
 
  private:
   Pacman pacman;
+  Ghost ghosts;
   SDL_Point food;
 
   std::random_device dev;

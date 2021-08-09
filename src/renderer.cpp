@@ -38,7 +38,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Pacman const pacman, SDL_Point const &food) {
+void Renderer::Render(Pacman const pacman, Ghost const ghosts, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -62,6 +62,12 @@ void Renderer::Render(Pacman const pacman, SDL_Point const &food) {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
   SDL_RenderFillRect(sdl_renderer, &block);
+
+  // Render Ghosts
+  block.x = static_cast<int>(ghosts.head_x) * block.w;
+  block.y = static_cast<int>(ghosts.head_y) * block.w;
+  SDL_SetRenderDrawColor(sdl_renderer,0xFF, 0x00, 0x00, 0xFF);
+  SDL_RenderFillRect(sdl_renderer,&block);
 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);

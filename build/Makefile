@@ -177,6 +177,60 @@ src/game.cpp.s:
 	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/ghost.o: src/ghost.cpp.o
+
+.PHONY : src/ghost.o
+
+# target to build an object file
+src/ghost.cpp.o:
+	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/ghost.cpp.o
+.PHONY : src/ghost.cpp.o
+
+src/ghost.i: src/ghost.cpp.i
+
+.PHONY : src/ghost.i
+
+# target to preprocess a source file
+src/ghost.cpp.i:
+	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/ghost.cpp.i
+.PHONY : src/ghost.cpp.i
+
+src/ghost.s: src/ghost.cpp.s
+
+.PHONY : src/ghost.s
+
+# target to generate assembly for a file
+src/ghost.cpp.s:
+	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/ghost.cpp.s
+.PHONY : src/ghost.cpp.s
+
+src/human.o: src/human.cpp.o
+
+.PHONY : src/human.o
+
+# target to build an object file
+src/human.cpp.o:
+	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/human.cpp.o
+.PHONY : src/human.cpp.o
+
+src/human.i: src/human.cpp.i
+
+.PHONY : src/human.i
+
+# target to preprocess a source file
+src/human.cpp.i:
+	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/human.cpp.i
+.PHONY : src/human.cpp.i
+
+src/human.s: src/human.cpp.s
+
+.PHONY : src/human.s
+
+# target to generate assembly for a file
+src/human.cpp.s:
+	$(MAKE) -f CMakeFiles/PacmanGame.dir/build.make CMakeFiles/PacmanGame.dir/src/human.cpp.s
+.PHONY : src/human.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -273,6 +327,12 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/ghost.o"
+	@echo "... src/ghost.i"
+	@echo "... src/ghost.s"
+	@echo "... src/human.o"
+	@echo "... src/human.i"
+	@echo "... src/human.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

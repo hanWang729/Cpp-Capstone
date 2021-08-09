@@ -12,9 +12,15 @@ public:
 
     Direction direction = Direction::kUp;
 
+    float head_x;
+    float head_y;
+
+    float speed{0.1f};
+
 protected:
     int grid_width;
     int grid_height;
+    void UpdateHead();
 };
 
 #endif

@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/workspace/Cpp-Capstone/src/controller.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/controller.cpp.o"
   "/home/workspace/Cpp-Capstone/src/game.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/game.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/ghost.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/ghost.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/human.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/human.cpp.o"
   "/home/workspace/Cpp-Capstone/src/main.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/main.cpp.o"
   "/home/workspace/Cpp-Capstone/src/pacman.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/pacman.cpp.o"
   "/home/workspace/Cpp-Capstone/src/renderer.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/renderer.cpp.o"
