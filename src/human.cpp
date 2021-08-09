@@ -23,3 +23,14 @@ void Human::UpdateHead() {
   head_x = fmod(head_x + grid_width, grid_width);
   head_y = fmod(head_y + grid_height, grid_height);
 }
+
+// Inefficient method to check if cell is occupied.
+bool Human::HumanCell(int x, int y)
+{
+  if (x == static_cast<int>(head_x) && y == static_cast<int>(head_y))
+  {
+    return true;
+  }
+
+  return false;
+}

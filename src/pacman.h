@@ -16,7 +16,6 @@ public:
 
   void Update();
 
-  bool PacmanCell(int x, int y);
   // int size{1};
   bool alive{true};
 

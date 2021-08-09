@@ -17,6 +17,8 @@ public:
 
     float speed{0.1f};
 
+    bool HumanCell(int x, int y);
+
 protected:
     int grid_width;
     int grid_height;

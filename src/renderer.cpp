@@ -59,7 +59,7 @@ void Renderer::Render(Pacman const pacman, Ghost const ghosts, std::vector<SDL_P
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
     block.x = food.x * block.w;
     block.y = food.y * block.h;
-    SDL_RenderDrawRect(sdl_renderer, &block);
+    SDL_RenderFillRect(sdl_renderer, &block);
   }
 
   // Render pacman's head
@@ -79,7 +79,7 @@ void Renderer::Render(Pacman const pacman, Ghost const ghosts, std::vector<SDL_P
   block.x = static_cast<int>(ghosts.head_x) * block.w;
   block.y = static_cast<int>(ghosts.head_y) * block.w;
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-  SDL_RenderFillRect(sdl_renderer, &block);
+  SDL_RenderDrawRect(sdl_renderer, &block);
 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);

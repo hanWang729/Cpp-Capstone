@@ -30,6 +30,7 @@ class Game {
   int score{0};
 
   void PlaceFood();
+  void PlaceGhost();
   void Update();
 };
 

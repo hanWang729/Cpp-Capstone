@@ -12,6 +12,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
   // Ghost g(grid_width,grid_height);
   // ghosts.emplace_back(g);
   PlaceFood();
+  PlaceGhost();
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -69,7 +70,7 @@ void Game::PlaceFood()
     y = random_h(engine);
     // Check that the location is not occupied by a pacman item before placing
     // food.
-    if (!pacman.PacmanCell(x, y))
+    if (!pacman.HumanCell(x, y))
     {
       food.x = x;
       food.y = y;
@@ -90,6 +91,22 @@ void Game::PlaceFood()
   }
 }
 
+void Game::PlaceGhost()
+{
+  int x, y;
+  while (true)
+  {
+    x = random_w(engine);
+    y = random_h(engine);
+    if (!pacman.HumanCell(x, y))
+    {
+      ghosts.head_x = x;
+      ghosts.head_y = y;
+      return;
+    }
+  }
+}
+
 void Game::Update()
 {
   if (!pacman.alive)
@@ -100,6 +117,12 @@ void Game::Update()
 
   int new_x = static_cast<int>(pacman.head_x);
   int new_y = static_cast<int>(pacman.head_y);
+
+  int new_ghost_x = static_cast<int>(ghosts.head_x);
+  int new_ghost_y = static_cast<int>(ghosts.head_y);
+
+  if (new_x == new_ghost_x && new_y == new_ghost_y)
+    pacman.alive = false;
 
   // Check if there's food over here
   for (int i = 0; i < foods.size(); i++)
