@@ -1,0 +1,28 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/workspace/Cpp-Capstone/src/controller.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/controller.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/game.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/game.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/ghost.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/ghost.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/human.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/human.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/main.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/main.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/pacman.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/pacman.cpp.o"
+  "/home/workspace/Cpp-Capstone/src/renderer.cpp" "/home/workspace/Cpp-Capstone/build/CMakeFiles/PacmanGame.dir/src/renderer.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/include/SDL2"
+  "../src"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
