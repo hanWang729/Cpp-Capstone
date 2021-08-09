@@ -3,6 +3,7 @@
 
 CMakeFiles/PacmanGame.dir/src/controller.cpp.o: ../src/controller.cpp
 CMakeFiles/PacmanGame.dir/src/controller.cpp.o: ../src/controller.h
+CMakeFiles/PacmanGame.dir/src/controller.cpp.o: ../src/human.h
 CMakeFiles/PacmanGame.dir/src/controller.cpp.o: ../src/pacman.h
 CMakeFiles/PacmanGame.dir/src/controller.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/PacmanGame.dir/src/controller.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -51,6 +52,7 @@ CMakeFiles/PacmanGame.dir/src/controller.cpp.o: /usr/include/SDL2/close_code.h
 CMakeFiles/PacmanGame.dir/src/game.cpp.o: ../src/controller.h
 CMakeFiles/PacmanGame.dir/src/game.cpp.o: ../src/game.cpp
 CMakeFiles/PacmanGame.dir/src/game.cpp.o: ../src/game.h
+CMakeFiles/PacmanGame.dir/src/game.cpp.o: ../src/human.h
 CMakeFiles/PacmanGame.dir/src/game.cpp.o: ../src/pacman.h
 CMakeFiles/PacmanGame.dir/src/game.cpp.o: ../src/renderer.h
 CMakeFiles/PacmanGame.dir/src/game.cpp.o: /usr/include/SDL2/SDL.h
@@ -99,6 +101,7 @@ CMakeFiles/PacmanGame.dir/src/game.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: ../src/controller.h
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: ../src/game.h
+CMakeFiles/PacmanGame.dir/src/main.cpp.o: ../src/human.h
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: ../src/pacman.h
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: ../src/renderer.h
@@ -146,6 +149,7 @@ CMakeFiles/PacmanGame.dir/src/main.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/PacmanGame.dir/src/main.cpp.o: /usr/include/SDL2/close_code.h
 
+CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: ../src/human.h
 CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: ../src/pacman.cpp
 CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: ../src/pacman.h
 CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: /usr/include/SDL2/SDL.h
@@ -192,6 +196,7 @@ CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/PacmanGame.dir/src/pacman.cpp.o: /usr/include/SDL2/close_code.h
 
+CMakeFiles/PacmanGame.dir/src/renderer.cpp.o: ../src/human.h
 CMakeFiles/PacmanGame.dir/src/renderer.cpp.o: ../src/pacman.h
 CMakeFiles/PacmanGame.dir/src/renderer.cpp.o: ../src/renderer.cpp
 CMakeFiles/PacmanGame.dir/src/renderer.cpp.o: ../src/renderer.h

@@ -5,7 +5,7 @@
 
 void Controller::ChangeDirection(Pacman &pacman, Pacman::Direction input,
                                  Pacman::Direction opposite) const {
-  if (pacman.direction != opposite || pacman.size == 1) pacman.direction = input;
+  if (pacman.direction != opposite) pacman.direction = input;
   return;
 }
 
