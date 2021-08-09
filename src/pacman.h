@@ -1,14 +1,14 @@
-#ifndef SNAKE_H
-#define SNAKE_H
+#ifndef Pacman_H
+#define Pacman_H
 
 #include <vector>
 #include "SDL.h"
 
-class Snake {
+class Pacman {
  public:
   enum class Direction { kUp, kDown, kLeft, kRight };
 
-  Snake(int grid_width, int grid_height)
+  Pacman(int grid_width, int grid_height)
       : grid_width(grid_width),
         grid_height(grid_height),
         head_x(grid_width / 2),
@@ -16,8 +16,7 @@ class Snake {
 
   void Update();
 
-  void GrowBody();
-  bool SnakeCell(int x, int y);
+  bool PacmanCell(int x, int y);
 
   Direction direction = Direction::kUp;
 
@@ -26,13 +25,13 @@ class Snake {
   bool alive{true};
   float head_x;
   float head_y;
-  std::vector<SDL_Point> body;
+  // std::vector<SDL_Point> body;
 
  private:
   void UpdateHead();
   void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell);
 
-  bool growing{false};
+  // bool growing{false};
   int grid_width;
   int grid_height;
 };
