@@ -3,7 +3,34 @@
 #include "game.h"
 #include "renderer.h"
 
-int main() {
+int main()
+{
+  std::cout << "Welcome to Pacman Game. Please choose a difficulty:" << std::endl;
+  std::cout << "1. Easy" << std::endl;
+  std::cout << "2. Normal (Default)" << std::endl;
+  std::cout << "3. Difficult" << std::endl;
+  int dif;
+  double speed;
+  int foodnum;
+  std::cin >> dif;
+  switch (dif)
+  {
+  case 1:
+    speed = 0.1;
+    foodnum = 5;
+    break;
+  case 2:
+    speed = 0.2;
+    foodnum = 3;
+    break;
+  case 3:
+    speed = 0.4;
+    foodnum = 1;
+    break;
+  default:
+    speed = 0.2;
+    foodnum = 3;
+  }
   constexpr std::size_t kFramesPerSecond{60};
   constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};
   constexpr std::size_t kScreenWidth{640};
@@ -13,10 +40,10 @@ int main() {
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
-  Game game(kGridWidth, kGridHeight);
+  Game game(kGridWidth, kGridHeight, foodnum, speed);
   game.Run(controller, renderer, kMsPerFrame);
   std::cout << "Game has terminated successfully!\n";
   std::cout << "Score: " << game.GetScore() << "\n";
-  
+
   return 0;
 }

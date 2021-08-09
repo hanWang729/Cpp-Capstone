@@ -13,9 +13,7 @@ public:
     head_x = grid_width / 2;
     head_y = grid_height / 2;
   };
-
   void Update();
-
   // int size{1};
   bool alive{true};
 

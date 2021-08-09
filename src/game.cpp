@@ -2,14 +2,15 @@
 #include <iostream>
 #include "SDL.h"
 
-Game::Game(std::size_t grid_width, std::size_t grid_height)
+Game::Game(std::size_t grid_width, std::size_t grid_height, int f, double speed)
     : pacman(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
-      random_h(0, static_cast<int>(grid_height - 1))
+      random_h(0, static_cast<int>(grid_height - 1)),
+      foodnum(f)
 {
   PlaceFood();
-  PlaceGhost(grid_width, grid_height);
+  PlaceGhost(grid_width, grid_height, speed);
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -88,9 +89,9 @@ void Game::PlaceFood()
   }
 }
 
-void Game::PlaceGhost(std::size_t grid_width, std::size_t grid_height)
+void Game::PlaceGhost(std::size_t grid_width, std::size_t grid_height, double speed)
 {
-  Ghost g = Ghost(grid_width, grid_width);
+  Ghost g = Ghost(grid_width, grid_width, speed);
   int x, y;
   while (true)
   {
@@ -142,7 +143,7 @@ void Game::Update()
       if (foods.size() == 0)
       {
         PlaceFood();
-        PlaceGhost(ghosts[0].getGridWidth(),ghosts[0].getGridHeight());
+        PlaceGhost(ghosts[0].getGridWidth(),ghosts[0].getGridHeight(), ghosts[0].speed);
         //increase speed.
         // pacman.speed += 0.02;
       }

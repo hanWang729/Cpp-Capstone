@@ -16,6 +16,13 @@ public:
     };
 
     Human(){};
+    Human(int gw, int gh)
+    {
+        grid_width = gw;
+        grid_height = gh;
+        head_x = grid_width / 2;
+        head_y = grid_height / 2;
+    };
 
     Direction direction = Direction::kUp;
 
@@ -24,6 +31,7 @@ public:
 
     float speed{0.1f};
 
+    void update(){};
     bool HumanCell(int x, int y);
 
     int getGridWidth() { return grid_width; };
