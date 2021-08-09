@@ -31,11 +31,12 @@ This this a Pacman-like game. The player need to eat foods to earn score, while 
 
 In order to play this game, you should build and run the program. After that, the program will ask you to select the difficulty:
 
-<!--Welcome to Pacman Game. Please choose a difficulty:-->
-1. <!--Easy-->
-2. <!--Normal (Default)-->
-3. <!--Difficult-->
-4. <!--Customization-->
+Welcome to Pacman Game. Please choose a difficulty:
+
+1. Easy
+2. Normal (Default)
+3. Difficult
+4. Customization
 
 Two difficulty will affect two different things in the game:
 
