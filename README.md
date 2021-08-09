@@ -47,7 +47,7 @@ You can choose the difficulty from easy, normal or difficult. Otherwise, you can
 
 After decide the difficulty, the game start, as:
 
-![image-20210809220725512](../GameScreen.png)
+![image-20210809220725512](GameScreen.png)
 
 In the game screen, the blue square is the player, yellow squares are food pieces, red rectangular is the ghost.
 
