@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <random>
+#include <vector>
 #include "SDL.h"
 #include "controller.h"
 #include "renderer.h"
@@ -18,7 +19,8 @@ class Game {
  private:
   Pacman pacman;
   Ghost ghosts;
-  SDL_Point food;
+  std::vector<SDL_Point> foods;
+  int foodnum{3};
 
   std::random_device dev;
   std::mt19937 engine;

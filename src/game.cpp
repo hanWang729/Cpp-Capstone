@@ -7,7 +7,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1)),
-      ghosts(grid_width,grid_height)
+      ghosts(grid_width, grid_height)
 {
   // Ghost g(grid_width,grid_height);
   // ghosts.emplace_back(g);
@@ -31,7 +31,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, pacman);
     Update();
-    renderer.Render(pacman, ghosts, food);
+    renderer.Render(pacman, ghosts, foods);
 
     frame_end = SDL_GetTicks();
 
@@ -61,6 +61,8 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 void Game::PlaceFood()
 {
   int x, y;
+  SDL_Point food;
+  bool food_repeat = false;
   while (true)
   {
     x = random_w(engine);
@@ -71,7 +73,19 @@ void Game::PlaceFood()
     {
       food.x = x;
       food.y = y;
-      return;
+      food_repeat = false;
+      for (auto f : foods)
+      {
+        if (f.x == food.x && f.y == food.y)
+          food_repeat = true;
+      }
+      if (!food_repeat)
+      {
+        foods.emplace_back(food);
+      }
+
+      if (foods.size() >= foodnum)
+        return;
     }
   }
 }
@@ -88,12 +102,21 @@ void Game::Update()
   int new_y = static_cast<int>(pacman.head_y);
 
   // Check if there's food over here
-  if (food.x == new_x && food.y == new_y)
+  for (int i = 0; i < foods.size(); i++)
   {
-    score++;
-    PlaceFood();
-    //increase speed.
-    pacman.speed += 0.02;
+    SDL_Point food = foods[i];
+    if (food.x == new_x && food.y == new_y)
+    {
+      score++;
+      foods.erase(foods.begin() + i);
+
+      if (foods.size() == 0)
+      {
+        PlaceFood();
+        //increase speed.
+        pacman.speed += 0.02;
+      }
+    }
   }
 }
 

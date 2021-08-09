@@ -12,7 +12,7 @@ class Renderer {
            const std::size_t grid_width, const std::size_t grid_height);
   ~Renderer();
 
-  void Render(Pacman const pacman, Ghost const ghosts, SDL_Point const &food);
+  void Render(Pacman const pacman, Ghost const ghosts, std::vector<SDL_Point> const &food);
   void UpdateWindowTitle(int score, int fps);
 
  private:
